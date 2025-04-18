@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="zh" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MySQL | Eyjafjalla-Chen</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","code_fold":-1,"search":{"preload":true,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+ menuSettings: {
+   zoom: "None"
+ },
+ showMathMenu: false,
+ jax: ["input/TeX","output/CommonHTML"],
+ extensions: ["tex2jax.js"],
+ TeX: {
+   extensions: ["AMSmath.js","AMSsymbols.js"],
+   equationNumbers: {
+     autoNumber: "AMS"
+   }
+ },
+ tex2jax: {
+   inlineMath: [["\\(", "\\)"]],
+   displayMath: [["\\[", "\\]"]]
+ }
+});</script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script async src="//unpkg.com/valine/dist/Valine.min.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {new Valine({
+ el: '#valine'
+ , appId: '2UWO0QbPxiGMkpKhErlWgHLZ-gzGzoHsz'
+ , appKey: 'CS09CMuTHSD4ua99KmcgyEzC' , placeholder: 'This comment is sent by Penguin Logistics.'
+ , path: window.location.pathname
+ , avatar: 'retro'
+ , avatar_cdn: 'https://dn-qiniu-avatar.qbox.me/avatar/'
+});document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => bszCaller.fetch(
+ "//busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", a => {
+  bszTag.texts(a),
+  bszTag.shows()
+}));reset()})</script><script class="pjax-js">reset= () => {new Valine({
+ el: '#valine'
+ , appId: '2UWO0QbPxiGMkpKhErlWgHLZ-gzGzoHsz'
+ , appKey: 'CS09CMuTHSD4ua99KmcgyEzC' , placeholder: 'This comment is sent by Penguin Logistics.'
+ , path: window.location.pathname
+ , avatar: 'retro'
+ , avatar_cdn: 'https://dn-qiniu-avatar.qbox.me/avatar/'
+});MathJax.Hub.Queue(["Typeset", MathJax.Hub]);document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>MySQL</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-04-18T12:25:00.000Z" id="date"> 2025-04-18</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-04-18T17:03:44.643Z" id="updated"> 2025-04-19</time></div></span><br><span id="busuanzi_container_page_pv">Page View: <span class="control" id="busuanzi_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><blockquote>
+<p>MySQL是最流行的关系型数据库管理系统之一。<br>MySQL所使用的 SQL 语言是用于访问数据库的最常用标准化语言。<br>MySQL 软件采用了双授权政策，其体积小、速度快、总体拥有成本低。<br>MySQL使用 C和 C++编写，并使用了多种编译器进行测试，保证了源代码的可移植性。</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="MySQL命令"><a href="#MySQL命令" class="headerlink" title="MySQL命令"></a>MySQL命令</h1><p><a target="_blank" rel="noopener" href="https://www.jyshare.com/front-end/7768/">SQL 在线测试工具 | 菜鸟工具</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/sql/sql-tutorial.html">SQL 教程 | 菜鸟教程</a></p>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><p><strong>连接到 MySQL 数据库：</strong> <code>mysql -u 用户名 -p</code><br><strong>查看所有数据库：</strong> <code>SHOW DATABASES;</code><br><strong>选择一个数据库：</strong> <code>USE 数据库名;</code><br><strong>查看所有表：</strong> <code>SHOW TABLES;</code><br><strong>查看表结构：</strong> <code>DESCRIBE 表名;</code> 或 <code>SHOW COLUMNS FROM 表名;</code><br><strong>创建一个新数据库：</strong> <code>CREATE DATABASE 数据库名;</code><br><strong>删除一个数据库：</strong> <code>DROP DATABASE 数据库名;</code><br><strong>创建一个新表：</strong> <code>CREATE TABLE 表名 (列名1 数据类型 [约束], 列名2 数据类型 [约束], ...);</code><br><strong>删除一个表：</strong> <code>DROP TABLE 表名;</code><br><strong>插入数据：</strong> <code>INSERT INTO 表名 (列1, 列2, ...) VALUES (值1, 值2, ...);</code><br><strong>查询数据：</strong> <code>SELECT 列1, 列2, ... FROM 表名 WHERE 条件;</code><br><strong>更新数据：</strong> <code>UPDATE 表名 SET 列1 = 值1, 列2 = 值2, ... WHERE 条件;</code><br><strong>删除数据：</strong> <code>DELETE FROM 表名 WHERE 条件;</code><br><strong>创建用户：</strong> <code>CREATE USER &#39;用户名&#39;@&#39;主机&#39; IDENTIFIED BY &#39;密码&#39;;</code><br><strong>授权用户：</strong> <code>GRANT 权限 ON 数据库名.* TO &#39;用户名&#39;@&#39;主机&#39;;</code><br><strong>刷新权限：</strong> <code>FLUSH PRIVILEGES;</code><br><strong>查看当前用户：</strong> <code>SELECT USER();</code><br><strong>退出 MySQL：</strong> <code>EXIT;</code> </p>
+<h2 id="数据库命令"><a href="#数据库命令" class="headerlink" title="数据库命令"></a>数据库命令</h2><p><strong>创建数据库：</strong> <code>CREATE DATABASE 数据库名;</code><br><strong>删除数据库：</strong> <code>DROP DATABASE 数据库名;</code><br><strong>修改数据库编码格式和排序规则：</strong> <code>ALTER DATABASE 数据库名 DEFAULT CHARACTER SET 编码格式 DEFAULT COLLATE 排序规则;</code><br><strong>查看所有数据库：</strong> <code>SHOW DATABASES;</code><br><strong>查看数据库详细信息：</strong> <code>SHOW CREATE DATABASE 数据库名;</code><br><strong>选择数据库：</strong> <code>USE 数据库名;</code><br><strong>查看数据库的状态信息：</strong> <code>SHOW STATUS;</code><br><strong>查看数据库的错误信息：</strong> <code>SHOW ERRORS;</code><br><strong>查看数据库的警告信息：</strong> <code>SHOW WARNINGS;</code><br><strong>查看数据库的表：</strong> <code>SHOW TABLES;</code><br><strong>查看表的结构：</strong> <code>DESC 表名;</code><br><strong>查看表的结构：</strong> <code>DESCRIBE 表名;</code><br><strong>查看表的结构：</strong> <code>SHOW COLUMNS FROM 表名;</code><br><strong>查看表的结构：</strong> <code>EXPLAIN 表名;</code><br><strong>创建表：</strong> <code>CREATE TABLE 表名 (列名1 数据类型 [约束], 列名2 数据类型 [约束], ...);</code><br><strong>删除表：</strong> <code>DROP TABLE 表名;</code><br><strong>修改表结构：</strong> <code>ALTER TABLE 表名 ADD 列名 数据类型 [约束];</code><br><strong>修改表结构：</strong> <code>ALTER TABLE 表名 DROP 列名;</code><br><strong>修改表结构：</strong> <code>ALTER TABLE 表名 MODIFY 列名 数据类型 [约束];</code><br><strong>查看表的创建 SQL：</strong> <code>SHOW CREATE TABLE 表名;</code> </p>
+<h2 id="数据表命令"><a href="#数据表命令" class="headerlink" title="数据表命令"></a>数据表命令</h2><p><strong>创建表：</strong> <code>CREATE TABLE 表名 (列名1 数据类型 [约束], 列名2 数据类型 [约束], ...);</code><br><strong>删除表：</strong> <code>DROP TABLE 表名;</code><br><strong>修改表结构（添加列）：</strong> <code>ALTER TABLE 表名 ADD 列名 数据类型 [约束];</code><br><strong>修改表结构（删除列）：</strong> <code>ALTER TABLE 表名 DROP 列名;</code><br><strong>修改表结构（修改列）：</strong> <code>ALTER TABLE 表名 MODIFY 列名 数据类型 [约束];</code><br><strong>修改表结构（重命名列）：</strong> <code>ALTER TABLE 表名 CHANGE 旧列名 新列名 数据类型 [约束];</code><br><strong>查看表结构：</strong> <code>DESC 表名;</code><br><strong>查看表结构：</strong> <code>DESCRIBE 表名;</code><br><strong>查看表结构：</strong> <code>SHOW COLUMNS FROM 表名;</code><br><strong>查看表结构：</strong> <code>EXPLAIN 表名;</code><br><strong>查看表的创建 SQL：</strong> <code>SHOW CREATE TABLE 表名;</code><br><strong>查看表中的所有数据：</strong> <code>SELECT * FROM 表名;</code><br><strong>插入数据：</strong> <code>INSERT INTO 表名 (列1, 列2, ...) VALUES (值1, 值2, ...);</code><br><strong>更新数据：</strong> <code>UPDATE 表名 SET 列1 = 值1, 列2 = 值2, ... WHERE 条件;</code><br><strong>删除数据：</strong> <code>DELETE FROM 表名 WHERE 条件;</code><br><strong>查看表的索引：</strong> <code>SHOW INDEX FROM 表名;</code><br><strong>创建索引：</strong> <code>CREATE INDEX 索引名 ON 表名 (列名);</code><br><strong>删除索引：</strong> <code>DROP INDEX 索引名 ON 表名;</code><br><strong>查看表的约束：</strong> <code>SHOW CREATE TABLE 表名;</code> (约束信息会包含在创建表的 SQL 中)<br><strong>查看表的统计信息：</strong> <code>SHOW TABLE STATUS LIKE &#39;表名&#39;;</code> </p>
+<h2 id="事务命令"><a href="#事务命令" class="headerlink" title="事务命令"></a>事务命令</h2><p><strong>开始事务：</strong> <code>START TRANSACTION;</code> 或 <code>BEGIN;</code><br><strong>提交事务：</strong> <code>COMMIT;</code><br><strong>回滚事务：</strong> <code>ROLLBACK;</code><br><strong>查看当前事务的状态：</strong> <code>SHOW ENGINE INNODB STATUS;</code> (可查看 InnoDB 存储引擎的事务状态)<br><strong>锁定表以进行事务操作：</strong> <code>LOCK TABLES 表名 WRITE;</code> 或 <code>LOCK TABLES 表名 READ;</code><br><strong>释放锁定的表：</strong> <code>UNLOCK TABLES;</code><br><strong>设置事务的隔离级别：</strong> <code>SET TRANSACTION ISOLATION LEVEL READ COMMITTED;</code><br><strong>设置事务的隔离级别：</strong> <code>SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;</code><br><strong>设置事务的隔离级别：</strong> <code>SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;</code><br><strong>设置事务的隔离级别：</strong> <code>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;</code> </p>
+<h1 id="MySQL数值类型"><a href="#MySQL数值类型" class="headerlink" title="MySQL数值类型"></a>MySQL数值类型</h1><h2 id="MySQL数值类型-1"><a href="#MySQL数值类型-1" class="headerlink" title="MySQL数值类型"></a>MySQL数值类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小</th>
+<th>范围（有符号）</th>
+<th>范围（无符号）</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TINYINT</td>
+<td>1 Byte</td>
+<td>(-128, 127)</td>
+<td>(0, 255)</td>
+<td>小整数值</td>
+</tr>
+<tr>
+<td>SMALLINT</td>
+<td>2 Bytes</td>
+<td>(-32 768, 32 767)</td>
+<td>(0, 65 535)</td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>MEDIUMINT</td>
+<td>3 Bytes</td>
+<td>(-8 388 608, 8 388 607)</td>
+<td>(0, 16 777 215)</td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>INT&#x2F;INTEGER</td>
+<td>4 Bytes</td>
+<td>(-2 147 483 648, 2 147 483 647)</td>
+<td>(0, 4 294 967 295)</td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>BIGINT</td>
+<td>8 Bytes</td>
+<td>(-9 223 372 036 854 775 808, 9 223 372 036 854 775 807)</td>
+<td>(0, 18 446 744 073 709 551 615)</td>
+<td>极大整数值</td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>4 Bytes</td>
+<td>(-3.402 823 466 E+38, -1.175 494 351 E-38), 0, (1.175 494 351 E-38, 3.402 823 466 E+38)</td>
+<td>0, (1.175 494 351 E-38, 3.402 823 466 E+38)</td>
+<td>单精度浮点数值</td>
+</tr>
+<tr>
+<td>DOUBLE</td>
+<td>8 Bytes</td>
+<td>(-1.797 693 134 862 315 7 E+308, -2.225 073 858 507 201 4 E-308), 0, (2.225 073 858 507 201 4 E-308, 1.797 693 134 862 315 7 E+308)</td>
+<td>0, (2.225 073 858 507 201 4 E-308, 1.797 693 134 862 315 7 E+308)</td>
+<td>双精度浮点数值</td>
+</tr>
+<tr>
+<td>DECIMAL</td>
+<td>对 DECIMAL(M,D)，如果 M&gt;D，为 M+2 否则为 D+2</td>
+<td>依赖于 M 和 D 的值</td>
+<td>依赖于 M 和 D 的值</td>
+<td>小数值</td>
+</tr>
+</tbody></table>
+<h2 id="时间和日期类型"><a href="#时间和日期类型" class="headerlink" title="时间和日期类型"></a>时间和日期类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小 (Bytes)</th>
+<th>范围</th>
+<th>格式</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DATE</td>
+<td>3</td>
+<td>1000-01-01 到 9999-12-31</td>
+<td>YYYY-MM-DD</td>
+<td>日期值</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>3</td>
+<td>‘-838:59:59’ 到 ‘838:59:59’</td>
+<td>HH:MM:SS</td>
+<td>时间值或持续时间</td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td>1</td>
+<td>1901 到 2155</td>
+<td>YYYY</td>
+<td>年份值</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>8</td>
+<td>1000-01-01 00:00:00 到 9999-12-31 23:59:59</td>
+<td>YYYY-MM-DD hh:mm:ss</td>
+<td>混合日期和时间值</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>4</td>
+<td>1970-01-01 00:00:01 UTC 到 2038-01-19 03:14:07 UTC</td>
+<td>YYYY-MM-DD hh:mm:ss</td>
+<td>混合日期和时间值，时间戳</td>
+</tr>
+</tbody></table>
+<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CHAR</td>
+<td>0-255 bytes</td>
+<td>定长字符串</td>
+</tr>
+<tr>
+<td>VARCHAR</td>
+<td>0-65535 bytes</td>
+<td>变长字符串</td>
+</tr>
+<tr>
+<td>TINYBLOB</td>
+<td>0-255 bytes</td>
+<td>不超过 255 个字符的二进制字符串</td>
+</tr>
+<tr>
+<td>TINYTEXT</td>
+<td>0-255 bytes</td>
+<td>短文本字符串</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td>0-65 535 bytes</td>
+<td>二进制形式的长文本数据</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>0-65 535 bytes</td>
+<td>长文本数据</td>
+</tr>
+<tr>
+<td>MEDIUMBLOB</td>
+<td>0-16 777 215 bytes</td>
+<td>二进制形式的中等长度文本数据</td>
+</tr>
+<tr>
+<td>MEDIUMTEXT</td>
+<td>0-16 777 215 bytes</td>
+<td>中等长度文本数据</td>
+</tr>
+<tr>
+<td>LONGBLOB</td>
+<td>0-4 294 967 295 bytes</td>
+<td>二进制形式的极大文本数据</td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td>0-4 294 967 295 bytes</td>
+<td>极大文本数据</td>
+</tr>
+<tr>
+<td><strong>注意</strong>：char(n) 和 varchar(n) 中括号中 n 代表字符的个数，并不代表字节个数，比如 CHAR(30) 就可以存储 30 个字符。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="枚举与集合类型"><a href="#枚举与集合类型" class="headerlink" title="枚举与集合类型"></a>枚举与集合类型</h2><ul>
+<li><strong>ENUM</strong>: 枚举类型，用于存储单一值，可以选择一个预定义的集合。</li>
+<li><strong>SET</strong>: 集合类型，用于存储多个值，可以选择多个预定义的集合。</li>
+</ul>
+<h2 id="空间数据类型"><a href="#空间数据类型" class="headerlink" title="空间数据类型"></a>空间数据类型</h2><p>GEOMETRY, POINT, LINESTRING, POLYGON, MULTIPOINT, MULTILINESTRING, MULTIPOLYGON, GEOMETRYCOLLECTION: 用于存储空间数据（地理信息、几何图形等）。</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2222/02/22/%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/">← Next 加密文件！</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2020/04/15/Markdown/">Markdown Prev →</a></div></div></div><div id="comments"><div id="valine"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a><a onclick="BgmControl()"><svg id="bgm-control" viewBox="0 0 30 34" fill="currentColor" style="width: 24px; transition: transform .3s;margin-top: 4px"><path d="M25.998 23.422V11.29h3.999v12.132h-3.999zM19.497 6.234h4.001v22.243h-4.001V6.234zM12.998.867h4v32.978h-4V.867zm-6.5 5.367h4.001v22.243H6.498V6.234zm-6.5 5.056h4v12.132h-4V11.29z"></path></svg><audio id="bgm" src="/audio/MistyMemory.mp3" loop crossorigin="anonymous"> </audio></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/Eyja.jpg" alt="Logo" style="margin:0;border-radius:50%;"></a><h1 id="Dr"><a href="/">Wenpeng Chen</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/Eyjafjalla-Chen"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561199040859145"><i class="fab fa-steam" alt="Steam"></i></a><a class="social" href="mailto:2632758324@qq.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://space.bilibili.com/105697216"><i class="fa-brands fa-bilibili" alt="BiliBili"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">MySQL命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">基础命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.</span> <span class="toc-text">数据库命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">数据表命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text">事务命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MySQL%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">MySQL数值类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B-1"><span class="toc-number">2.1.</span> <span class="toc-text">MySQL数值类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">时间和日期类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">字符串类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%9A%E4%B8%BE%E4%B8%8E%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.4.</span> <span class="toc-text">枚举与集合类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.5.</span> <span class="toc-text">空间数据类型</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body></html>
